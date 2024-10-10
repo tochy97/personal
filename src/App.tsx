@@ -1,5 +1,5 @@
 import React from 'react';
-import Header from "./components/Header/Header"
+import Nav from "./components/Nav/Nav"
 import Footer from './components/Footer/Footer';
 import Content from './components/Content/Content';
 import Home from './pages/Home/Home';
@@ -7,7 +7,7 @@ import Home from './pages/Home/Home';
 function App() {
   return (
     <div className="App">
-      <Header />
+      <Nav />
       <Home />
       <Footer />
     </div>

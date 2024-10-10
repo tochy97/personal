@@ -1,0 +1,2 @@
+export const footerContainer:string =  'fixed z-20 h-[65px] bottom-0 left-0 w-full flex pt-3 pb-5 flex gap-7 lg:gap-9 place-content-center bg-white hover:opacity-1 shadow-inner ';
+export const footerIcon:string =  'text-black hover:text-blue-500 text-2xl md:text-3xl cursor-pointer ';

@@ -1,10 +1,10 @@
 import React from 'react'
-import { footer } from '../classNames'
+import { footerContainer } from './model/classNames'
 
 type Props = {}
 
 export default function Footer({}: Props) {
   return (
-    <div className={footer}>Footer</div>
+    <div className={footerContainer}>Footer</div>
   )
 }
