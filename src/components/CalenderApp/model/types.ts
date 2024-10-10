@@ -21,3 +21,5 @@ export type Year = {
 }
 
 export type Past = Array<Year>
+
+export type PastPromise = Promise<Past>
