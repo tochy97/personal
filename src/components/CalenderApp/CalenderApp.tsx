@@ -1,4 +1,5 @@
 import React, { ReactElement, useState, useEffect } from 'react';
+
 import getPast from "./controller/getPast";
 import { Past, PastPromise } from './model/types';
 

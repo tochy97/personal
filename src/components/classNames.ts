@@ -1,4 +1,5 @@
 // Main
+export const container = `flex flex-col place-items-center mt-[95px] mb-[105px] h-full w-full px-6 z-0 text-[20px] `;
 export const innerContainer:string =  "bg-gray-200 mt-3 text-xl px-6 border border-black py-6 rounded h-full w-[80vw] ";
 export const pageHeader:string =  "font-medium text-3xl ";
 export const pageHeaderClickable:string =  `${pageHeader} + w-fit font-bold hover:text-blue-500 cursor-pointer `;
@@ -16,12 +17,6 @@ export const myPic:string =  'w-32'
 export const scrollTracker:string =  "fixed right-0 top-[75px] left-0 h-[10px] origin-[0%] z-20 bg-red-500 ";
 export const starColor:string =  "ring-blue-500 "
 export const star:string =  `${starColor} ring-offset-4 ring-offset-blue-100 z-30 cursor-grab active:cursor-grabbing `;
-
-//Common
-export const modalContainer:string =  "z-40 p-10 bg-white cursor-default outline outline-blue-500 outline-4 ";
-export const modalIcons:string =  'md:ml-4 lg:ml-7 text-[20px] md:text-[35px] text-red-500 ';
-export const modalHeaderContainer:string =  "text-sm md:text-3xl px-5 py-2 md:flex flex justify-center ";
-export const modalContentContainer:string =  'mb-3 text-sm md:text-lg lg:text-2xl ';
 
 //Inputs
 export const textField:string =  "border-2 border-gray-500 rounded-lg py-2 px-3 w-full placeholder:text-[17px] focus:outline-blue-500 ";
