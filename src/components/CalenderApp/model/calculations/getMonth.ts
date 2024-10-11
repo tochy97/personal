@@ -1,6 +1,6 @@
 import React from 'react'
-import { Month, Week } from '../model/types'
-import { daysArray, makeSunday, monthMax, monthsArray } from '../model/constants';
+import { Month, Week } from '../types'
+import { daysArray, makeSunday, monthMax, monthsArray } from '../constants';
 import getWeek from './getWeek';
 
 export default function getMonth(date: Date, monthIndex: number, leap: boolean): Month {

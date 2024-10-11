@@ -1,5 +1,5 @@
-import { isLeap } from '../model/constants';
-import { Past, PastPromise, Year } from '../model/types';
+import { isLeap } from '../constants';
+import { Past, PastPromise, Year } from '../types';
 import getYear from './getYear';
 
 /**

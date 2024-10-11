@@ -1,6 +1,6 @@
 import React, { ReactElement, useState, useEffect } from 'react';
 
-import getPast from "./controller/getPast";
+import getPast from "./model/calculations/getPast";
 import { Past, PastPromise } from './model/types';
 
 function CalenderApp(): ReactElement<any, any> {
@@ -8,7 +8,7 @@ function CalenderApp(): ReactElement<any, any> {
   const [myLife, setMyLife] = useState<Past>();
 
   useEffect(() => {
-    getPast(1997).then((res) => {
+    getPast(1997).then((res: Past) => {
       setMyLife(res);
     });
   }, [])

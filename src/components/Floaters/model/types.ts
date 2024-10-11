@@ -1,15 +1,14 @@
 import { RefObject } from "react"
 
-export interface CurrentNode extends RefObject<HTMLDivElement> {
+export type CurrentNode = {
     x?: number, 
     y?: number, 
-    done?: boolean, 
-    size?: string 
+    goingLeft?: boolean, 
+    size?: string ,
+    ref: RefObject<HTMLDivElement>
 }
 
 export type NodeRef = {
     currentObject?: CurrentNode,
     currentIndex?: number
 }
-
-export type NodeArray = Array<CurrentNode>;

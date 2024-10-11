@@ -21,37 +21,24 @@ export default function Floaters({}: Props): ReactElement<any, any> {
         return Math.floor(Math.random() * (border_2 - border_1) + border_1);
     };
 
-    const points: NodeArray = [];
+    const points: CurrentNode[] = [];
     let count_x = 1;
     let count_y = 1;
 
-    let nodePushObject: CurrentNode;
-
+    const createLeaf = (goingLeft: boolean, size: string): CurrentNode => {
+        return {
+            ref: React.createRef(),
+            x: getX(count_x),
+            y: getY(count_y),
+            goingLeft: goingLeft,
+            size: size
+        };
+    }
     while(count_x <= 3){
         while(count_y <= 5){
             if(count_y % 2 === 0){
-                nodePushObject = React.createRef();
-                nodePushObject.x = getX(count_x);
-                nodePushObject.y = getY(count_y);
-                nodePushObject.done = true;
-                nodePushObject.size = "small";
-                points.push(nodePushObject);
-                nodePushObject.size = "medium";
-                points.push(nodePushObject);
-                nodePushObject.size = "large";
-                points.push(nodePushObject);
             }
             else{
-                nodePushObject = React.createRef();
-                nodePushObject.x = getX(count_x);
-                nodePushObject.y = getY(count_y);
-                nodePushObject.done = false;
-                nodePushObject.size = "small";
-                points.push(nodePushObject);
-                nodePushObject.size = "medium";
-                points.push(nodePushObject);
-                nodePushObject.size = "large";
-                points.push(nodePushObject);
             }
             count_y++;
         }
