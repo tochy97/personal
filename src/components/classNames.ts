@@ -1,6 +1,8 @@
 // Main
 export const container = `flex flex-col place-items-center mt-[95px] mb-[105px] h-full w-full px-6 z-0 text-[20px] `;
-export const innerContainer:string =  "bg-gray-200 mt-3 text-xl px-6 border border-black py-6 rounded h-full w-[80vw] ";
+export const articleContainer:string =  "mt-3 text-xl h-full lg:w-[50vw] ";
+export const innerContainer:string =  "px-6 py-6 bg-gray-200 border border-black py-6 rounded h-full lg:w-[50vw] ";
+export const innerContainerHeader:string =  "font-medium text-2xl ";
 export const pageHeader:string =  "font-medium text-3xl ";
 export const pageHeaderClickable:string =  `${pageHeader} + w-fit font-bold hover:text-blue-500 cursor-pointer `;
 export const pageTitle:string =  "text-5xl font-bold mb-3 text-center ";

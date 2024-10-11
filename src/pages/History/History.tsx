@@ -3,7 +3,7 @@ import CalenderApp from '../../components/CalenderApp/CalenderApp'
 
 type Props = {}
 
-export default function Home({}: Props): ReactElement<any, any>  {
+export default function History({}: Props): ReactElement<any, any>  {
   return (
     <CalenderApp/>
   )
