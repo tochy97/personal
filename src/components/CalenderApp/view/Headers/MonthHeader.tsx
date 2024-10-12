@@ -1,4 +1,3 @@
-import React from 'react'
 import { monthHeader } from '../../model/classNames';
 
 type Props = { 
@@ -6,6 +5,12 @@ type Props = {
     year: number
 };
 
+/**
+ * Build month header
+ * @param month 
+ * @param year 
+ * @returns 
+ */
 export default function MonthHeader({ month, year }: Props) {
   return (
         <div className={monthHeader}>

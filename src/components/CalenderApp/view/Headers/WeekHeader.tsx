@@ -1,10 +1,12 @@
-import React, { ReactElement } from 'react'
+import { ReactElement } from 'react'
 import { weekContainer, weekHeaderContainer } from '../../model/classNames';
 import { daysArray } from '../../model/constants';
 
-type Props = {}
-
-export default function WeekHeader({}: Props): ReactElement<any, any> {
+/**
+ * Build week header
+ * @returns 
+ */
+export default function WeekHeader(): ReactElement<any, any> {
   return (
     <div className={weekHeaderContainer}>
       {daysArray.map((element, index) => (

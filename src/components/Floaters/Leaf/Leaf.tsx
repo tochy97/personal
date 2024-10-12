@@ -1,7 +1,7 @@
 import { ReactElement, useState } from 'react'
 import { motion } from "framer-motion"
 
-import { star } from '../../classNames';
+import { bubble } from '../model/classNames';
 
 type Props = { 
     startX: number,
@@ -13,7 +13,6 @@ type Props = {
 export default function Leaf({ startX, startY, startDir, size }: Props): ReactElement<any, any> {
     const viewport_width: number = window.screen.width;
     const [isDone, setIsDone] = useState<boolean>(startDir);
-    const [isClicked, setIsClicked] = useState<boolean>(false);
 
     const variants = {
         left : { x: viewport_width - viewport_width, opacity:1 },
@@ -43,13 +42,12 @@ export default function Leaf({ startX, startY, startDir, size }: Props): ReactEl
                 x: { duration: Math.floor(Math.random() * (30 - 15) + 15) },
             }}
             variants={variants}
-            onUpdate={leftRoight} 
+            onUpdate={leftRoight}
+            className={
+                size === "large" ? `w-10 h-10 ring-2 rounded-3xl ${bubble}` :
+                size === "medium" ? `w-7 h-7 ring-2 rounded-2xl ${bubble}` :
+                `w-4 h-4 ring-2 rounded-lg ${bubble}`}
         >
-            <div className={
-                size === "large" ? `w-10 h-10 ring-2 rounded-3xl ${star}` :
-                size === "medium" ? `w-7 h-7 ring-2 rounded-2xl ${star}` :
-                `w-4 h-4 ring-2 rounded-lg ${star}`}>
-            </div>
         </motion.div>
     );
 }

@@ -10,6 +10,13 @@ type Props = {
   thisMonth: Month
 };
 
+/**
+ * Build months with MonthsHeader and WeekHeaders
+ * Map input from thisMonths to Days
+ * @param year 
+ * @param thisMonth 
+ * @returns 
+ */
 export default function Months({ year, thisMonth }: Props): ReactElement<any, any> {
   const month = thisMonth.month;
 

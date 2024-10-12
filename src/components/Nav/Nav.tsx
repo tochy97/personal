@@ -8,7 +8,6 @@ import { useWindowDimensions } from '../functions';
 type Props = {}
 
 export default function Nav({ }: Props) {
-  const [settingVisible, setSettingVisible] = useState<boolean>(false);
   const [subVisible, setSubVisible] = useState<boolean>(false);
   const { width } = useWindowDimensions();
   const navRef = useRef<HTMLDivElement>(null);

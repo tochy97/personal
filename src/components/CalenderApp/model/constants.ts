@@ -1,4 +1,4 @@
-import { Day, Month, Week } from "./types";
+import { Week } from "./types";
 
 export const daysArray: Array<string> =
     [

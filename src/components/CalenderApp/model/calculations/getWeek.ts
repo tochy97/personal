@@ -2,6 +2,13 @@ import React from 'react'
 import { Day, Week } from '../types'
 import { daysArray } from '../constants';
 
+/**
+ * Get this week
+ * @param dayIndex 
+ * @param stringDay 
+ * @param maxIndex 
+ * @returns 
+ */
 export default function getWeek(dayIndex: number, stringDay: string, maxIndex: number): Week {
     const output: Week = {
         days: []
@@ -23,6 +30,7 @@ export default function getWeek(dayIndex: number, stringDay: string, maxIndex: n
 
     let dayInput: Day;
     while ((dayIndex < nextSundayIndex) && (dayIndex <= maxIndex)) {
+        // Get the day as a string (Monday, Tuesday, etc)
         stringDay = daysArray[indexDayofWeek];
         dayInput = {
             index: dayIndex,
@@ -31,8 +39,10 @@ export default function getWeek(dayIndex: number, stringDay: string, maxIndex: n
         output.days.push(dayInput);
         dayIndex++;
         indexDayofWeek++;
+        // End of the week so reset index and break
         if (indexDayofWeek === 7) {
             indexDayofWeek = 0;
+            break;
         }
     }
 

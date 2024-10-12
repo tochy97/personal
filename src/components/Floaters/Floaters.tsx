@@ -29,17 +29,16 @@ export default function Floaters({ }: Props): ReactElement<any, any> {
           goingLeft: goingLeft,
           size: size,
           recreatePoint: async function (this: CurrentNode) {
-            const oldX =
-              this.ref.current?.style.getPropertyValue("offsetWidth");
-            const oldY = this.ref.current?.style.getPropertyValue("offsetTop");
+            const oldX: number = this.ref.current?.offsetWidth ? this.ref.current?.offsetWidth : 100;
+            const oldY: number = this.ref.current?.offsetTop ? this.ref.current?.offsetTop : 100;
 
             this.ref.current?.style.setProperty("opacity", "0");
             this.ref.current?.style.setProperty("offsetWidth", "0");
             this.ref.current?.style.setProperty("offsetTop", "0");
 
             setTimeout(() => {
-              this.ref.current?.style.setProperty("opacity", "oldX");
-              this.ref.current?.style.setProperty("offsetWidth", "oldY");
+              this.ref.current?.style.setProperty("opacity", oldX.toString());
+              this.ref.current?.style.setProperty("offsetWidth", oldY.toString());
               this.ref.current?.style.setProperty("offsetTop", "1");
             }, 5000);
           },
@@ -65,7 +64,7 @@ export default function Floaters({ }: Props): ReactElement<any, any> {
     };
 
     return (
-        <div className='fixed top-[95px] bottom-[95px] left-[10px] right-[20px] w-fit h-fit'>
+        <div className='fixed top-[95px] bottom-[95px] left-[10px] right-[20px] w-fit h-fit z-70'>
             {
                 points.map((element, index) => (
                     <div ref={element.ref} key={index} onClick={() => element.recreatePoint(index)}>

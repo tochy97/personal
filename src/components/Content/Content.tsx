@@ -8,6 +8,11 @@ type Props = {
   display: ReactElement<any, any>;
 };
 
+/**
+ * Main body for content
+ * @param display 
+ * @returns 
+ */
 export default function Content({ display }: Props) {
   // const { loading, error, data } = useQuery();
   // if (loading) return <p>Loading...</p>;
@@ -25,7 +30,6 @@ export default function Content({ display }: Props) {
   // ));
   return (
     <main className={container}>
-      <Floaters/>
       {display}
     </main>
   );

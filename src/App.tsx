@@ -5,6 +5,7 @@ import Content from './components/Content/Content';
 import History from "./pages/History/History";
 import About from './pages/About/About';
 import { app } from './components/classNames';
+import Floaters from './components/Floaters/Floaters';
 
 function App() {
   useEffect(() => {
@@ -15,6 +16,7 @@ function App() {
       <Nav />
       <Content display={<History />} />
       <Footer />
+      <Floaters/>
     </div>
   );
 }

@@ -9,6 +9,19 @@ const client: ApolloClient<NormalizedCacheObject> = new ApolloClient ({
   cache: new InMemoryCache(),
 })
 
+const localCache = new InMemoryCache({
+  typePolicies: {
+    Content: {
+      fields: {
+        current: {
+          read (value = "Home") {
+            return value;
+          }
+        },
+      },
+    },
+  },
+});
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
