@@ -1,5 +1,6 @@
-import React, { ReactElement, useState } from 'react'
+import { ReactElement, useState } from 'react'
 import { motion } from "framer-motion"
+
 import { star } from '../../classNames';
 
 type Props = { 

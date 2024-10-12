@@ -1,5 +1,5 @@
 import { isLeap } from '../constants';
-import { Past, PastPromise, Year } from '../types';
+import { Past, PastPromise } from '../types';
 import getYear from './getYear';
 
 /**
@@ -9,20 +9,18 @@ import getYear from './getYear';
  */
 export default function getPast(endYear: number): PastPromise {
   return new Promise((resolve, reject) => {
-    const output: Past = [];
+    let output: Past = [];
   
     const today = new Date();
   
     let startYear: number = today.getFullYear();
     let leap: boolean = isLeap(startYear);
-    let yearInput: Year;
   
     while (startYear >= endYear) {
-      yearInput = getYear(today, leap, startYear);
-      output.unshift(yearInput);
+      output = [...getYear(today, leap, startYear), ...output];
       startYear--;
     }
-  
+    console.log(output)
     resolve(output);
   })
 }

@@ -1,3 +1,5 @@
+import { RefObject } from "react";
+
 export type Day = {
     index?: number,
     day?: string
@@ -9,17 +11,20 @@ export type Week = {
 };
 
 export type Month = {
+    ref: RefObject<HTMLDivElement>,
     weeks: Array<Week>,
     month: string,
-    index: number
+    index: number,
+    year: number,
+    isLeap: boolean,
+    popView: Function
 };
 
-export type Year = {
-    months: Array<Month>,
-    index: number,
-    isLeap: boolean
-}
-
-export type Past = Array<Year>
+export type Past = Array<Month>
 
 export type PastPromise = Promise<Past>
+
+export type displayRef = {
+    ref: RefObject<HTMLDivElement>;
+    value: string;
+}

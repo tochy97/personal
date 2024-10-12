@@ -8,8 +8,3 @@ export type CurrentNode = {
     ref: RefObject<HTMLDivElement>,
     recreatePoint: Function
 }
-
-export type NodeRef = {
-    currentObject?: CurrentNode,
-    currentIndex?: number
-}

@@ -1,7 +1,6 @@
-import React, { ReactElement, RefObject } from 'react'
-import { motion } from "framer-motion"
+import React, { ReactElement } from 'react'
 
-import { CurrentNode, NodeRef } from './model/types';
+import { CurrentNode } from './model/types';
 import Leaf from './Leaf/Leaf';
 
 type Props = {}
@@ -63,7 +62,7 @@ export default function Floaters({ }: Props): ReactElement<any, any> {
         }
         count_y = 1;
         count_x++;
-    };debugger
+    };
 
     return (
         <div className='fixed top-[95px] bottom-[95px] left-[10px] right-[20px] w-fit h-fit'>

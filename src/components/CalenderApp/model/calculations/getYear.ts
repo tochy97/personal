@@ -1,5 +1,5 @@
 import { daysArray, monthMax, monthsArray, nextMonth } from '../constants';
-import { Month, Year } from '../types'
+import { Month, Past } from '../types'
 import getMonth from './getMonth';
 
 /**
@@ -9,12 +9,8 @@ import getMonth from './getMonth';
  * @param yearIndex 
  * @returns Year
  */
-export default function getYear(today: Date, leap: boolean, yearIndex: number): Year {
-    const output: Year = {
-        months: [],
-        index: yearIndex,
-        isLeap: leap
-    };
+export default function getYear(today: Date, leap: boolean, yearIndex: number): Past {
+    const output: Past = [];
 
     let monthIndex: number = today.getMonth();
     const originalIndex: number = monthIndex;
@@ -22,15 +18,15 @@ export default function getYear(today: Date, leap: boolean, yearIndex: number): 
 
 
     while(monthIndex <= 11) {
-        monthInput = getMonth(today, monthIndex, leap);
-        output.months.push(monthInput);
+        monthInput = getMonth(today, monthIndex, leap, yearIndex);
+        output.push(monthInput);
         monthIndex++;
         today = new Date(yearIndex, monthIndex, 1)
     }
     monthIndex = originalIndex;
     while(monthIndex >= 0) {
-        monthInput = getMonth(today, monthIndex, leap);
-        output.months.unshift(monthInput);
+        monthInput = getMonth(today, monthIndex, leap, yearIndex);
+        output.unshift(monthInput);
         monthIndex--;
         today = new Date(yearIndex, monthIndex, monthMax(monthIndex, leap))
     }

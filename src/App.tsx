@@ -12,7 +12,7 @@ function App() {
   return (
     <div className="App">
       <Nav />
-      <Content display={<About />} />
+      <Content display={<History />} />
       <Footer />
     </div>
   );
