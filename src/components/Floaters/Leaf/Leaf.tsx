@@ -1,14 +1,15 @@
 import React, { ReactElement, useState } from 'react'
 import { motion } from "framer-motion"
+import { star } from '../../classNames';
 
 type Props = { 
     startX: number,
     startY: number, 
     startDir: boolean, 
-    size:
+    size: string
 };
 
-export default function Leaf({ startX, startY, startDir, size }: Props) {
+export default function Leaf({ startX, startY, startDir, size }: Props): ReactElement<any, any> {
     const viewport_width: number = window.screen.width;
     const [isDone, setIsDone] = useState<boolean>(startDir);
     const [isClicked, setIsClicked] = useState<boolean>(false);

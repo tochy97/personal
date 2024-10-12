@@ -1,6 +1,6 @@
 import React from 'react'
-import { Day, Week } from '../model/types'
-import { daysArray } from '../model/constants';
+import { Day, Week } from '../types'
+import { daysArray } from '../constants';
 
 export default function getWeek(dayIndex: number, stringDay: string, maxIndex: number): Week {
     const output: Week = {

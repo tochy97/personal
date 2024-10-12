@@ -1,5 +1,5 @@
-import { daysArray, monthMax, monthsArray, nextMonth } from '../model/constants';
-import { Month, Year } from '../model/types'
+import { daysArray, monthMax, monthsArray, nextMonth } from '../constants';
+import { Month, Year } from '../types'
 import getMonth from './getMonth';
 
 /**

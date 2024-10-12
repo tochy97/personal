@@ -2,12 +2,13 @@ import { useQuery } from "@apollo/client";
 import React, { ReactElement } from "react";
 
 import { container } from "./model/classNames";
+import Floaters from "../Floaters/Floaters";
 
 type Props = {
-  display: ReactElement<any, any>
+  display: ReactElement<any, any>;
 };
 
-export default function Content({display}: Props) {
+export default function Content({ display }: Props) {
   // const { loading, error, data } = useQuery();
   // if (loading) return <p>Loading...</p>;
   // if (error) return <p>Error : {error.message}</p>;
@@ -22,5 +23,10 @@ export default function Content({display}: Props) {
   //     <br />
   //   </div>
   // ));
-  return <main className={container}>{display}</main>;
+  return (
+    <main className={container}>
+      <Floaters/>
+      {display}
+    </main>
+  );
 }
