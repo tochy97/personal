@@ -10,18 +10,23 @@ type Props = {
 }
 
 export default function Days({ value, month, year }: Props): ReactElement<any, any> {
+  let enableOnClick = false;
+  if (typeof value !== "undefined") {
+    enableOnClick = true;
+  }
   return (
         <Modal
-          trigger={<div className={dayContainer}>{value}</div>}
+          enableOnClick={enableOnClick}
+          trigger={value && <div className={dayContainer}>{value}</div>}
           header={
             <>
-              <div className="mr-3">
+              <div>
                 {month} {value}, {year}
               </div>
             </>
           }
           content={value}
-          closeButtonclass={"justify-self-center fixed bottom-[15px]"}
+          closeButtonclass={"justify-self-center fixed bottom-[4em]"}
           modalContainerClass={stack + " fixed"}
         />
   );

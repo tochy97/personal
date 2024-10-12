@@ -7,8 +7,8 @@ import { useWindowDimensions } from '../../functions';
 import { monthsArray } from '../model/constants';
 import { useScroll } from 'framer-motion';
 import Modal from '../../Modal/Modal';
-import { fixedOptionBox, pictureButton, scrollTracker, stack, submitButton, textField } from '../../classNames';
-import { historyContainer } from '../model/classNames';
+import {  pictureButton, stack, submitButton, textField } from '../../classNames';
+import { historyContainer, fixedOptionBox, scrollTracker } from '../model/classNames';
 import Months from './Months/Months';
 import Loading from '../../Loading/Loading';
 
@@ -17,7 +17,7 @@ type Props = {
 }
 
 export default function View({ past }: Props): ReactElement<any, any> {
-    const [goYear, setGoYear] = useState<number>(0);
+    const [goYear, setGoYear] = useState<number>(1997);
     const [goMonth, setGoMonth] = useState<number>(0);
     const today:Date = new Date();
 
@@ -65,6 +65,7 @@ export default function View({ past }: Props): ReactElement<any, any> {
         <div className={fixedOptionBox}>
           <div>
             <Modal
+              enableOnClick={true}
               trigger={
                 <div className={pictureButton}>
                   {" "}
@@ -113,7 +114,6 @@ export default function View({ past }: Props): ReactElement<any, any> {
                   </button>
                 </>
               }
-              modalContainerClass={stack + " relative"}
               width="[100px]"
               height="[50px]"
               top="0"

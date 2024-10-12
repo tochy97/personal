@@ -27,7 +27,7 @@ export const monthsArray: Array<string> =
         "December"
     ]
 
-export const makeSunday = (day: string, value: number):[number, string] => {
+export const makeSunday = ( value: number, day?: string):[number, string] => {
     if (value <= -7) {
         value += 7;
     }
@@ -224,8 +224,8 @@ export const getWindowSize = () => {
 
 export const isLeap = (year: number): boolean => (year % 4 === 0 ? true : false);
 
-export const getNextMonth = (month: Array<Week>): string => {
-    let lastDay =  month[month.length - 1].days[6].day;
+export const getNextMonth = (month: Array<Week>, maxIndex: number): string => {
+    let lastDay =  month[month.length - 1].days.find(ele => ele.index === maxIndex)?.day
     if (typeof lastDay === "string") {
         lastDay = nextDay(lastDay);
     }
@@ -236,7 +236,7 @@ export const getNextMonth = (month: Array<Week>): string => {
 }
 
 export const getPrevMonth = (month: Array<Week>): string => {
-    let firstDay = month[0].days[6].day;
+    let firstDay = month[0].days.find(ele => ele.index === 1)?.day
     if (typeof firstDay === "string") {
         firstDay = prevDay(firstDay);
     }

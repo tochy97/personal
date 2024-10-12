@@ -37,7 +37,7 @@ export default function getWeek(dayIndex: number, stringDay: string, maxIndex: n
     }
 
     // Fill empty objects until there are 7
-    while (dayIndex < 1) {
+    while (output.days.length < 7) {
         // Invalid day placeholder
         dayIndex++;
         output.days.push({})
