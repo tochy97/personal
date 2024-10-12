@@ -1,6 +1,5 @@
 // Main
-export const app = "flex m-0 p-0"
-export const container = `flex flex-col place-items-center mt-[95px] mb-[105px] h-full w-full px-6 z-0 text-[20px] `;
+export const app = "flex m-0 p-0 relative "
 export const articleContainer:string =  "mt-3 text-xl h-full lg:w-[50vw] ";
 export const innerContainer:string =  "px-6 py-6 bg-gray-200 border border-black py-6 rounded h-full lg:w-[50vw] ";
 export const innerContainerHeader:string =  "font-medium text-2xl ";

@@ -31,7 +31,7 @@ export default function About({}: Props): ReactElement<any, any> {
 
   // test 2
   return (
-    <div className={stack + " justify-items-center"}>
+    <div className={stack + " place-items-center mb-[4em]"}>
       <img className={myPic} src={me} alt="Me" />
       <div className={innerText}>
         Practicing software developer with a B.S. in Computer Science from the

@@ -1,20 +1,24 @@
-import React, { ReactNode, useRef, useState } from 'react'
+import { ReactNode, useRef, useState } from 'react'
 import { IoOptionsOutline, IoClose } from "react-icons/io5";
-import { IoMdSettings } from "react-icons/io";
 
-import { navBar, navComponentContainer, navTitle, subNavContainer } from './model/classnames'
+import { navBar, navComponentContainer, subNavContainer } from './model/classnames'
 import { useWindowDimensions } from '../functions';
+import { contentVar } from '../apollo/apollo';
 
-type Props = {}
-
-export default function Nav({ }: Props) {
+export default function Nav() {
   const [subVisible, setSubVisible] = useState<boolean>(false);
   const { width } = useWindowDimensions();
   const navRef = useRef<HTMLDivElement>(null);
 
+  const content = contentVar();
+
+  const changeView = (view: string) => {
+    content.current = view;
+    contentVar(content);
+  }
   const rightSide: ReactNode =
     <>
-      <div className={navComponentContainer}>
+      <div className={navComponentContainer} onClick={() => changeView("History")}>
         History
       </div>
     </>
@@ -22,7 +26,7 @@ export default function Nav({ }: Props) {
   return (
     <>
       <nav className={navBar} ref={navRef}>
-        <div className={navComponentContainer}>
+        <div className={navComponentContainer} onClick={() => changeView("Home")}>
             Tochy Egeonu
         </div>
         {
