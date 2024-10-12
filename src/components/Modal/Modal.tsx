@@ -1,4 +1,4 @@
-import React, { ReactNode, useEffect, useRef, useState } from 'react'
+import React, { createRef, ReactNode, RefObject, useEffect, useRef, useState } from 'react'
 
 import { closeButton, pageDivider } from '../classNames';
 import { modalContainer, modalContentContainer, modalHeaderContainer } from './model/classNames';
@@ -18,7 +18,7 @@ type Props = {
 
 export default function Modal({ enableOnClick, trigger, header, content, closeButtonclass, modalContainerClass, width, height, top, left }: Props) {
   const [visible, setVisible] = useState<boolean>(false);
-  const modalRef = useRef<HTMLDivElement>(null);
+  const modalRef: RefObject<HTMLDivElement> = createRef();
 
   useEffect(() => {
     // Close modal if click outside

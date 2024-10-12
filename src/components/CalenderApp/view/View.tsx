@@ -50,7 +50,8 @@ export default function View({ past }: Props): ReactElement<any, any> {
 
   const viewRef: RefObject<HTMLDivElement> = createRef();
   const { scrollYProgress } = useScroll({
-    container: viewRef
+    container: viewRef,
+    layoutEffect: true
   });
 
   return (
