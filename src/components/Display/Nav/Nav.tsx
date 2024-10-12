@@ -2,8 +2,8 @@ import { ReactNode, useRef, useState } from 'react'
 import { IoOptionsOutline, IoClose } from "react-icons/io5";
 
 import { navBar, navComponentContainer, subNavContainer } from './model/classnames'
-import { useWindowDimensions } from '../functions';
-import { contentVar } from '../apollo/apollo';
+import { useWindowDimensions } from '../../functions';
+import { contentVar } from '../../apollo/apollo';
 
 export default function Nav() {
   const [subVisible, setSubVisible] = useState<boolean>(false);

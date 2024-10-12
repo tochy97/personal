@@ -1,13 +1,13 @@
 import React, { ReactNode, useEffect } from 'react';
 import { useQuery, useReactiveVar } from '@apollo/client';
 
-import Nav from "./components/Nav/Nav"
-import Footer from './components/Footer/Footer';
-import Content from './components/Content/Content';
+import Nav from "./components/Display/Nav/Nav"
+import Footer from './components/Display/Footer/Footer';
+import Content from './components/Display/Content/Content';
 import { app } from './components/classNames';
 import Floaters from './components/Floaters/Floaters';
 import { GET_CONTENT } from './components/apollo/model/queries';
-import Loading from './components/Loading/Loading';
+import Loading from './pages/Loading/Loading';
 
 import History from "./pages/History/History";
 import About from './pages/About/About';

@@ -1,4 +1,3 @@
-import React from 'react'
 import { Day, Week } from '../types'
 import { daysArray } from '../constants';
 
@@ -6,10 +5,10 @@ import { daysArray } from '../constants';
  * Get this week
  * @param dayIndex 
  * @param stringDay 
- * @param maxIndex 
+ * @param monthMaxIndex 
  * @returns 
  */
-export default function getWeek(dayIndex: number, stringDay: string, maxIndex: number): Week {
+export default function getWeek(dayIndex: number, stringDay: string, monthMaxIndex: number): Week {
     const output: Week = {
         days: []
     };
@@ -29,7 +28,7 @@ export default function getWeek(dayIndex: number, stringDay: string, maxIndex: n
     }
 
     let dayInput: Day;
-    while ((dayIndex < nextSundayIndex) && (dayIndex <= maxIndex)) {
+    while ((dayIndex < nextSundayIndex) && (dayIndex <= monthMaxIndex)) {
         // Get the day as a string (Monday, Tuesday, etc)
         stringDay = daysArray[indexDayofWeek];
         dayInput = {

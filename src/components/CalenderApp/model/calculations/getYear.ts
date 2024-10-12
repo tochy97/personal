@@ -1,4 +1,4 @@
-import { daysArray, getNextMonth, getPrevMonth, monthMax } from '../constants';
+import { daysArray, getNextMonth, getPrevMonth, isLeap, monthMax } from '../constants';
 import { Month, Past } from '../types'
 import getMonth from './getMonth';
 
@@ -9,13 +9,15 @@ import getMonth from './getMonth';
  * @param yearIndex 
  * @returns Year
  */
-export default function getYear(today: Date, leap: boolean, yearIndex: number): Past {
+export default function getYear(today: Date): Past {
     const output: Past = [];
 
+    let yearIndex: number = today.getFullYear();
     let monthIndex: number = today.getMonth();
     let dayIndex: number = today.getDate();
     const originalIndex: number = monthIndex;
     let monthInput:Month;
+    let leap: boolean = isLeap(yearIndex);
     let maxIndex: number = monthMax(monthIndex, leap);
     let stringDay: string | undefined = daysArray[today.getDay()];
 

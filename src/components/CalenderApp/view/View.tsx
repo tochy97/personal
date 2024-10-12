@@ -10,7 +10,7 @@ import Modal from '../../Modal/Modal';
 import { pictureButton, stack, submitButton, textField } from '../../classNames';
 import { historyContainer, fixedOptionBox, scrollTracker } from '../model/classNames';
 import Months from './Months/Months';
-import Loading from '../../Loading/Loading';
+import Loading from '../../../pages/Loading/Loading';
 
 type Props = {
   past: Past

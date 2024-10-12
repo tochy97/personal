@@ -1,7 +1,6 @@
 import { ReactElement } from "react";
 
 import { container } from "./model/classNames";
-import Floaters from "../Floaters/Floaters";
 
 type Props = {
   display: ReactElement<any, any>;
