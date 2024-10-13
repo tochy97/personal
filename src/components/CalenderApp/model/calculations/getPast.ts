@@ -19,7 +19,6 @@ export default function getPast(endYear: number): PastPromise {
       startYear--;
       date = new Date(startYear,1,1);
     }
-    console.log(output)
     resolve(output);
   })
 }

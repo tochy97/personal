@@ -5,25 +5,21 @@ import Loading from "../../../pages/Loading/Loading";
 import Error from "../../../pages/Error/Error";
 import History from "../../../pages/History/History";
 import About from "../../../pages/About/About";
+import ContentController from "../../apollo/controller/controller";
 
 /**
  * Main body for content
  * @returns 
  */
 export default function Content() {
-  const { data, loading, error } = useQuery(GET_CONTENT);
+  const { current } = ContentController();
   return (
     <main className={container}>
-      {data.content.current}
       {
-        loading ?
-          <Loading />
-          : error ?
-            <Error message={error.message} />
-            : data.content.current === "History" ?
-              <History />
-              :
-              <About />
+        current === "History" ?
+          <History />
+          :
+          <About />
       }
     </main>
   );

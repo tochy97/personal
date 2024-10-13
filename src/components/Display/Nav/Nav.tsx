@@ -3,16 +3,23 @@ import { IoOptionsOutline, IoClose } from "react-icons/io5";
 
 import { navBar, navComponentContainer, subNavContainer } from './model/classnames'
 import { useWindowDimensions } from '../../functions';
-import { contentVar } from '../../apollo/apollo';
+import { useMutation } from '@apollo/client';
+import { UPDATE_CONTENT } from '../../apollo/model/mutations';
+import { client } from '../../..';
+import { GET_CONTENT } from '../../apollo/model/queries';
+import ContentController from '../../apollo/controller/controller';
 
 export default function Nav() {
   const [subVisible, setSubVisible] = useState<boolean>(false);
   const { width } = useWindowDimensions();
   const navRef = useRef<HTMLDivElement>(null);
 
+  const { changeContent } = ContentController();
 
-  const changeView = (view: string) => {
+  const changeView = async (current: string) => {
+    changeContent( current )
   }
+
   const rightSide: ReactNode =
     <>
       <div className={navComponentContainer} onClick={() => changeView("History")}>

@@ -5,7 +5,7 @@ import App from './App';
 import { ApolloClient, ApolloProvider, NormalizedCacheObject } from '@apollo/client';
 import { localCache } from './components/apollo/apollo';
 
-const client: ApolloClient<NormalizedCacheObject> = new ApolloClient ({  
+export const client: ApolloClient<NormalizedCacheObject> = new ApolloClient ({  
   connectToDevTools: true,
   cache: localCache,
 });

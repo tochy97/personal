@@ -2,6 +2,12 @@ import { InMemoryCache, makeVar } from "@apollo/client";
 
 import { Content } from "./model/type";
 
+const initialContent: Content = {
+  current: ""
+};
+
+export const contentVar = makeVar<Content>(initialContent);
+
 export const localCache: InMemoryCache = new InMemoryCache({
     typePolicies: {
       Query: {
@@ -12,20 +18,6 @@ export const localCache: InMemoryCache = new InMemoryCache({
             }
           }
         }
-      },
-      Mutation: {
-        fields: {
-
-        }
       }
     }
 });
-
-const initialContent: Content = {
-    current: "History",
-    loaded: false
-};
-
-export const contentVar = makeVar(
-    initialContent
-);
