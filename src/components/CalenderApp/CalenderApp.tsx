@@ -1,23 +1,25 @@
-import React, { ReactElement, useState, useEffect } from 'react';
+import { ReactElement, useState, useEffect } from 'react';
 
-import getPast from "./controller/getPast";
-import { Past, PastPromise } from './model/types';
+import getPast from "./model/calculations/getPast";
+import { Past } from './model/types';
+import View from './view/View';
 
+/**
+ * Main function
+ * @returns 
+ */
 function CalenderApp(): ReactElement<any, any> {
   // Get full life object
-  const [myLife, setMyLife] = useState<Past>();
+  const [myLife, setMyLife] = useState<Past>([]);
 
   useEffect(() => {
-    getPast(1997).then((res) => {
+    getPast(1997).then((res: Past) => {
       setMyLife(res);
     });
   }, [])
 
-
-  // Create new display object and map life
   return (
-    <div>
-    </div>
+        <View past={myLife} />
   );
 }
 

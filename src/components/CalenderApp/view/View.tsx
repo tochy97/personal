@@ -1,9 +1,131 @@
-import React from 'react'
+import { createRef, ReactElement, RefObject, useState } from 'react'
+import { motion } from "framer-motion";
+import { FaSearch } from "react-icons/fa";
 
-type Props = {}
+import { Past } from '../model/types';
+import { monthsArray } from '../model/constants';
+import { useScroll } from 'framer-motion';
+import Modal from '../../Modal/Modal';
+import { pictureButton, submitButton, textField } from '../../classNames';
+import { historyContainer, fixedOptionBox, scrollTracker } from '../model/classNames';
+import Months from './Months/Months';
 
-export default function View({}: Props) {
+type Props = {
+  past: Past
+}
+
+/**
+ * Build display including:
+ * Scrolltracker
+ * Calender
+ * Options Box
+ * @param past 
+ * @returns 
+ */
+export default function View({ past }: Props): ReactElement<any, any> {
+
+  const today: Date = new Date();
+  
+  // Inputs for options box
+  const [goYear, setGoYear] = useState<number>(1997);
+  let yearOptions: Array<{ display: number, value: number }> = [];
+  for (let i = 1997; i <= today.getFullYear(); i++) {
+    yearOptions.push({ display: i, value: i });
+  }
+  const [goMonth, setGoMonth] = useState<number>(0);
+  let monthOptions = [];
+  for (let i = 0; i < 12; i++) {
+    monthOptions.push({ display: monthsArray[i], value: i });
+  }
+
+  // Either use a direct input or find index of the month and pop then view there
+  const search = (year: number, month: number, direct?: number): void => {
+    if (!direct) {
+      direct = past.findIndex((element) => element.year == year && element.index == month);
+    }
+    past[direct].popView();
+  };
+
+  const viewRef: RefObject<HTMLDivElement> = createRef();
+  const { scrollYProgress } = useScroll({
+    container: viewRef,
+    layoutEffect: true
+  });
+
   return (
-    <div>View</div>
-  )
+    <div className={historyContainer}>
+      <motion.div
+        className={scrollTracker}
+        style={{ scaleX: scrollYProgress }}
+      />
+      <div className={fixedOptionBox}>
+        <div>
+          {/* Options Box */}
+          <Modal
+            enableOnClick={true}
+            trigger={
+              <div className={pictureButton}>
+                {" "}
+                <FaSearch size={29} />
+              </div>
+            }
+            content={
+              <>
+                <select
+                  className={textField}
+                  onChange={(event) =>
+                    setGoYear(parseInt(event.target.value))
+                  }
+                  value={goYear}
+                >
+                  <option value="" disabled defaultValue="true">
+                    Year
+                  </option>
+                  {yearOptions.map((option) => (
+                    <option key={option.value} value={option.value}>
+                      {option.display}
+                    </option>
+                  ))}
+                </select>
+                <select
+                  className={textField}
+                  onChange={(event) =>
+                    setGoMonth(parseInt(event.target.value))
+                  }
+                  value={goMonth}
+                >
+                  <option value="" disabled defaultValue="true">
+                    Month
+                  </option>
+                  {monthOptions.map((option) => (
+                    <option key={option.value} value={option.value}>
+                      {option.display}
+                    </option>
+                  ))}
+                </select>
+                <button
+                  className={submitButton}
+                  onClick={() => search(goYear, goMonth)}
+                >
+                  Go
+                </button>
+              </>
+            }
+            width="[100px]"
+            height="[50px]"
+            top="0"
+            left="0"
+          />
+        </div>
+      </div>
+      {
+        // Map the months to Months
+        past.map((element, index) => (
+          <div key={index} ref={past[index].ref}>
+            <Months thisMonth={element} year={element.year} />
+          </div>
+        ))
+      }
+    </div>
+  );
 }

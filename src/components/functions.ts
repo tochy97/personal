@@ -22,3 +22,7 @@ export const useWindowDimensions = () => {
 
     return windowDimensions;
 }
+
+export async function streamToJSON(stream: ReadableStream<Uint8Array>): Promise<string> {
+    return JSON.parse(await new Response(stream).text());
+ }
