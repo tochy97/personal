@@ -32,6 +32,7 @@ export default function Months({ year, thisMonth }: Props): ReactElement<any, an
               value={inner?.index}
               month={month}
               year={year}
+              monthIndex={thisMonth.index}
             />
           ))
         )}

@@ -10,7 +10,6 @@ export default function getPast(endYear: number): PastPromise {
   return new Promise((resolve, reject) => {
     let output: Past = [];
     let date = new Date();
-
     let startYear: number = date.getFullYear();
   
     while (startYear >= endYear) {
@@ -18,7 +17,8 @@ export default function getPast(endYear: number): PastPromise {
       output = [...getYear(date), ...output];
       startYear--;
       date = new Date(startYear,1,1);
-    }
+    }console.log(output)
+
     resolve(output);
   })
 }

@@ -70,13 +70,11 @@ export default function Modal({ enableOnClick, trigger, header, content, closeBu
                         h-${h} 
                         rounded-lg`}
         >
-          {header ? (
+          {header && (
             <>
               <div className={modalHeaderContainer}>{header}</div>
               <hr className={pageDivider} />
             </>
-          ) : (
-            <></>
           )}
           <div className={modalContentContainer}>
             {content}
