@@ -84,7 +84,7 @@ export default function About(): ReactElement<any, any> {
               The history page is something i wrote for fun. I use todays date to
               calculate the week, the week is used to calculate the month, the
               month is used calculate year, then i use the year calculation to go
-              all the way back to my birthday. -{" "}
+              all the way back to my birthday. Each day will request 10 New York Times articles from that day. I plan to implement many other free use APIs.-{" "}
               <a
                 className={link}
                 href="https://github.com/tochy97/tochyegeonu_dot_com"
