@@ -27,3 +27,4 @@ eslint.config.ts
 .firebasesrc
 .firebaserc
 firebase-debug.log
+.firebase
