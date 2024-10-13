@@ -54,7 +54,7 @@ export default function View({ past }: Props): ReactElement<any, any> {
 
   return (
     <div className={historyContainer}>
-              <div className='fixed top-[4em] bg-white h-[2em] z-10 opacity-75'>New York Times Article History from 1997 to today.</div>
+              <div className='fixed top-[4em] bg-white h-[2em] z-10 opacity-75'>New York Times calender of articles from 1997 to today.</div>
 
       <motion.div
         className={scrollTracker}
