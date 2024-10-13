@@ -17,7 +17,8 @@ export default function Nav() {
   const { changeContent } = ContentController();
 
   const changeView = async (current: string) => {
-    changeContent( current )
+    changeContent( current );
+    setSubVisible(false);
   }
 
   const rightSide: ReactNode =

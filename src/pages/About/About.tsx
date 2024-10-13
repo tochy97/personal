@@ -1,4 +1,4 @@
-import React, { ReactElement, useState } from "react";
+import React, { ReactElement, RefObject, useState } from "react";
 import { motion } from "framer-motion";
 
 import {
@@ -29,13 +29,16 @@ export default function About({ }: Props): ReactElement<any, any> {
   const [isMySite, setIsMySite] = useState<boolean>(true);
   const [isAboutMe, setIsAboutMe] = useState<boolean>(true);
 
+  const meRef: RefObject<HTMLImageElement> = React.createRef()
   const { width, height } = useWindowDimensions();
-  // This is a test
-
+  meRef.current?.scrollIntoView({
+    behavior: "smooth",
+    block: "center",
+  })
   // test 2
   return (
     <div className={stack + " place-items-center mb-[4em]"}>
-      <img className={myPic} src={me} alt="Me" autoFocus />
+      <img className={myPic} src={me} alt="Me" ref={meRef} />
       <div className={innerText}>
         Practicing software developer with a B.S. in Computer Science from the
         University of Texas at Arlington.
