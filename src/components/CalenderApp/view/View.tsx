@@ -1,16 +1,14 @@
-import React, { createRef, ReactElement, RefObject, useEffect, useState } from 'react'
+import { createRef, ReactElement, RefObject, useState } from 'react'
 import { motion } from "framer-motion";
 import { FaSearch } from "react-icons/fa";
 
 import { Past } from '../model/types';
-import { useWindowDimensions } from '../../functions';
 import { monthsArray } from '../model/constants';
 import { useScroll } from 'framer-motion';
 import Modal from '../../Modal/Modal';
-import { pictureButton, stack, submitButton, textField } from '../../classNames';
+import { pictureButton, submitButton, textField } from '../../classNames';
 import { historyContainer, fixedOptionBox, scrollTracker } from '../model/classNames';
 import Months from './Months/Months';
-import Loading from '../../../pages/Loading/Loading';
 
 type Props = {
   past: Past

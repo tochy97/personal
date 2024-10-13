@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import { ApolloClient, ApolloProvider, InMemoryCache, NormalizedCacheObject } from '@apollo/client';
+import { ApolloClient, ApolloProvider, NormalizedCacheObject } from '@apollo/client';
 import { localCache } from './components/apollo/apollo';
 
 const client: ApolloClient<NormalizedCacheObject> = new ApolloClient ({  

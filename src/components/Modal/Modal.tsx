@@ -34,7 +34,7 @@ export default function Modal({ enableOnClick, trigger, header, content, closeBu
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, [modalRef]);
+  }, []);
 
   // Default fullscreen
   let w = width ? width : 'screen';

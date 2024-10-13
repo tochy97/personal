@@ -1,20 +1,30 @@
-import { ReactElement } from "react";
-
+import { useQuery } from "@apollo/client";
 import { container } from "./model/classNames";
-
-type Props = {
-  display: ReactElement<any, any>;
-};
+import { GET_CONTENT } from "../../apollo/model/queries";
+import Loading from "../../../pages/Loading/Loading";
+import Error from "../../../pages/Error/Error";
+import History from "../../../pages/History/History";
+import About from "../../../pages/About/About";
 
 /**
  * Main body for content
- * @param display 
  * @returns 
  */
-export default function Content({ display }: Props) {
+export default function Content() {
+  const { data, loading, error } = useQuery(GET_CONTENT);
   return (
     <main className={container}>
-      {display}
+      {data.content.current}
+      {
+        loading ?
+          <Loading />
+          : error ?
+            <Error message={error.message} />
+            : data.content.current === "History" ?
+              <History />
+              :
+              <About />
+      }
     </main>
   );
 }

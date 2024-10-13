@@ -10,11 +10,8 @@ export default function Nav() {
   const { width } = useWindowDimensions();
   const navRef = useRef<HTMLDivElement>(null);
 
-  const content = contentVar();
 
   const changeView = (view: string) => {
-    content.current = view;
-    contentVar(content);
   }
   const rightSide: ReactNode =
     <>

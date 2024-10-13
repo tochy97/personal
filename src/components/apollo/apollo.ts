@@ -14,7 +14,9 @@ export const localCache: InMemoryCache = new InMemoryCache({
         }
       },
       Mutation: {
+        fields: {
 
+        }
       }
     }
 });
