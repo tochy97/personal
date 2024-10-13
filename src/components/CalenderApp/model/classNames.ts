@@ -1,4 +1,4 @@
-export const historyContainer:string =  "static w-full  md:px-28 text-2xl z-0 select-none ";
+export const historyContainer:string =  "static w-full flex flex-col justify-center md:px-28 text-2xl z-0 select-none ";
 export const monthContainer:string =  "mb-12 border border-grey-100 ";
 export const monthGrid:string =  "w-full h-full grid grid-cols-7 divide-x divide-y ";
 export const monthHeader:string =  "col-span-1 border-b-2 border-red-500 flex justify-evenly items-center xl:text-4xl py-4 lg:pt-8 lg:pb-3 ";

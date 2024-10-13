@@ -19,7 +19,9 @@ function CalenderApp(): ReactElement<any, any> {
   }, [])
 
   return (
-        <View past={myLife} />
+    <>
+      <View past={myLife} />
+    </>
   );
 }
 

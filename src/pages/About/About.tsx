@@ -4,23 +4,18 @@ import { motion } from "framer-motion";
 import {
   articleContainer,
   centerContainer,
-  closeButton,
   innerContainer,
-  innerContainerHeader,
   innerText,
   link,
   myPic,
   pageHeader,
   stack,
-  submitButton,
   textButtom,
 } from "../../components/classNames";
 import { useWindowDimensions } from "../../components/functions";
 import me from "../../images/MeCircle.jpg";
 
-type Props = {};
-
-export default function About({ }: Props): ReactElement<any, any> {
+export default function About(): ReactElement<any, any> {
   const variants = {
     open: { opacity: 1, height: "auto", x: 0 },
     closed: { opacity: 0, height: "0", x: "-100%" },
@@ -60,6 +55,7 @@ export default function About({ }: Props): ReactElement<any, any> {
             width={width < 875 || height < 475 ? "fit" : "640"}
             height={width < 875 || height < 525 ? "fit" : "480"}
             allow="autoplay"
+            title="Resume"
           >
             <a href="https://drive.google.com/file/d/1S4w82XwdNZATUdfBj3Lzz5W0ZnX1a0Px/view?usp=sharing">
               Download

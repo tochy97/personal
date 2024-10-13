@@ -6,6 +6,7 @@ import Error from "../../../pages/Error/Error";
 import History from "../../../pages/History/History";
 import About from "../../../pages/About/About";
 import ContentController from "../../apollo/controller/controller";
+import Weather from "../../../pages/Weather/Weather";
 
 /**
  * Main body for content
@@ -18,6 +19,8 @@ export default function Content() {
       {
         current === "History" ?
           <History />
+          : current === "Weather" ?
+          <Weather />
           :
           <About />
       }
