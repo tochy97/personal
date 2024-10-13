@@ -10,15 +10,8 @@ on:
     branches: [ "main" ]
 
 jobs:
-  build:
-
+  build_and_deploy:
     runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        node-version: [20.x]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
-
     steps:
     - uses: actions/checkout@v4
     - name: Use Node.js ${{ matrix.node-version }}
@@ -33,4 +26,5 @@ jobs:
       with:
         repoToken: '${{ secrets.GITHUB_TOKEN }}'
         firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_MYSITE_36F88 }}'
+        channelId: live
         projectId: mysite-36f88
