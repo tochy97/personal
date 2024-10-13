@@ -27,3 +27,4 @@ export const disabledButton:string =  `${button} cursor-default bg-gray-400`
 export const closeButton:string =  `${button} hover:bg-red-500 active:bg-red-600 `;
 export const submitButton:string =  `${button} hover:bg-blue-500 active:bg-blue-600 `;
 export const pictureButton:string =  "hover:text-red-600 ml-2 mt-3 cursor-pointer ";
+export const textButtom:string =  "font-bold cursor-pointer hover:text-blue-500 ";
