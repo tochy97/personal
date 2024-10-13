@@ -24,3 +24,5 @@ yarn-error.log*
 
 /node
 eslint.config.ts
+.firebasesrc
+firebase-debug.log
