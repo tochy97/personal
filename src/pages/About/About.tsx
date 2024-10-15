@@ -87,7 +87,7 @@ export default function About(): ReactElement<any, any> {
               all the way back to my birthday. Each day will request 10 New York Times articles from that day. I plan to implement many other free use APIs.-{" "}
               <a
                 className={link}
-                href="https://github.com/tochy97/tochyegeonu_dot_com"
+                href="https://github.com/tochy97/react-types"
               >
                 Souce code.{" "}
               </a>
