@@ -3,6 +3,7 @@ import { getNYTArticles } from '../../controller/NewYorkTimes'
 import { streamToJSON } from '../../../functions';
 import { pageDivider, stack } from '../../../classNames';
 import { dayLink } from '../../model/classNames';
+import Loading from '../../../../pages/Loading/Loading';
 
 type Props = {
     day: string,
@@ -24,7 +25,7 @@ export default function NewYorkTimes({ day, search }: Props) {
     return (
         <div>
             {
-                articles.length > 0 &&
+                articles.length > 0 ?
                 <>
                     New York Times best articles from this day
                     <hr className={pageDivider}/>
@@ -36,6 +37,8 @@ export default function NewYorkTimes({ day, search }: Props) {
                         ))
                     }
                 </>
+                : 
+                <Loading/>
             }
         </div>
     )
