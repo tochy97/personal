@@ -32,7 +32,7 @@ export default function NewYorkTimes({ day, search }: Props) {
                     {
                         articles.map((ele) => (
                             <div className={stack}>
-                                <div className='flex flex-row'>- <a target="_blank" className={dayLink} href={ele.web_url}>{ele.abstract}</a></div>
+                                <div className='flex flex-row'>-{" "}<a target="_blank" className={dayLink} href={ele.web_url}>{ele.abstract}</a></div>
                             </div>
                         ))
                     }

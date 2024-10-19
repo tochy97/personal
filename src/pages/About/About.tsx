@@ -13,7 +13,7 @@ import {
   textButtom,
 } from "../../components/classNames";
 import { useWindowDimensions } from "../../components/functions";
-import me from "../../images/MeCircle.jpg";
+import me from "./MeCircle.jpg";
 
 export default function About(): ReactElement<any, any> {
   const variants = {
@@ -32,37 +32,12 @@ export default function About(): ReactElement<any, any> {
   })
   // test 2
   return (
-    <div className={stack + " place-items-center mb-[4em]"}>
+    <div className={stack + " place-items-center mb-[5em]"}>
       <img className={myPic} src={me} alt="Me" ref={meRef} />
       <div className={innerText}>
         Practicing software developer with a B.S. in Computer Science from the
         University of Texas at Arlington.
       </div>
-      <p
-        className={textButtom + "text-center"}
-        onClick={() => setIsResumeOpen(!isResumeOpen)}
-      >
-        Resume
-      </p>
-      <motion.div
-        animate={isResumeOpen ? "open" : "closed"}
-        variants={variants}
-        transition={{ duration: 0.8, ease: [0.04, 0.62, 0.23, 0.98] }}
-      >
-        <div className={centerContainer}>
-          <iframe
-            src="https://drive.google.com/file/d/1S4w82XwdNZATUdfBj3Lzz5W0ZnX1a0Px/preview"
-            width={width < 875 || height < 475 ? "fit" : "640"}
-            height={width < 875 || height < 525 ? "fit" : "480"}
-            allow="autoplay"
-            title="Resume"
-          >
-            <a href="https://drive.google.com/file/d/1S4w82XwdNZATUdfBj3Lzz5W0ZnX1a0Px/view?usp=sharing">
-              Download
-            </a>
-          </iframe>
-        </div>
-      </motion.div>
       <article className={articleContainer + centerContainer + stack}>
         <h1 className={pageHeader + textButtom + "text-center"}
           onClick={() => setIsMySite(!isMySite)}>My site</h1>
@@ -87,11 +62,11 @@ export default function About(): ReactElement<any, any> {
               all the way back to my birthday. Each day will request 10 New York Times articles from that day. I plan to implement many other free use APIs.-{" "}
               <a
                 className={link}
-                href="https://github.com/tochy97/react-types"
+                href="https://github.com/tochy97/personal"
               >
-                Souce code.{" "}
+                Souce code
               </a>
-              Enjoy the bubbles!
+              . Enjoy the bubbles!
             </section>
           </div>
         </motion.div>
@@ -141,6 +116,31 @@ export default function About(): ReactElement<any, any> {
           </div>
         </motion.div>
       </article>
+      <p
+        className={textButtom + "text-center"}
+        onClick={() => setIsResumeOpen(!isResumeOpen)}
+      >
+        Resume
+      </p>
+      <motion.div
+        animate={isResumeOpen ? "open" : "closed"}
+        variants={variants}
+        transition={{ duration: 0.8, ease: [0.04, 0.62, 0.23, 0.98] }}
+      >
+        <div className={centerContainer}>
+          <iframe
+            src="https://drive.google.com/file/d/1S4w82XwdNZATUdfBj3Lzz5W0ZnX1a0Px/preview"
+            width={width < 875 || height < 475 ? "fit" : "640"}
+            height={width < 875 || height < 525 ? "fit" : "480"}
+            allow="autoplay"
+            title="Resume"
+          >
+            <a href="https://drive.google.com/file/d/1S4w82XwdNZATUdfBj3Lzz5W0ZnX1a0Px/view?usp=sharing">
+              Download
+            </a>
+          </iframe>
+        </div>
+      </motion.div>
     </div>
   );
 }

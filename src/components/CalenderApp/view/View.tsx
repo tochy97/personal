@@ -1,13 +1,11 @@
-import { createRef, ReactElement, RefObject, useState } from 'react'
-import { motion } from "framer-motion";
+import { ReactElement, useState } from 'react'
 import { FaSearch } from "react-icons/fa";
 
 import { Past } from '../model/types';
 import { monthsArray } from '../model/constants';
-import { useScroll } from 'framer-motion';
 import Modal from '../../Modal/Modal';
 import { pictureButton, submitButton, textField } from '../../classNames';
-import { historyContainer, fixedOptionBox, scrollTracker } from '../model/classNames';
+import { historyContainer, fixedOptionBox, instruction } from '../model/classNames';
 import Months from './Months/Months';
 
 type Props = {
@@ -41,25 +39,15 @@ export default function View({ past }: Props): ReactElement<any, any> {
   // Either use a direct input or find index of the month and pop then view there
   const search = (year: number, month: number, direct?: number): void => {
     if (!direct) {
-      direct = past.findIndex((element) => element.year == year && element.index == month);
+      direct = past.findIndex((element) => element.year === year && element.index === month);
     }
     past[direct].popView();
   };
 
-  const viewRef: RefObject<HTMLDivElement> = createRef();
-  const { scrollYProgress } = useScroll({
-    container: viewRef,
-    layoutEffect: true
-  });
-
   return (
     <div className={historyContainer}>
-              <div className='fixed text-sm md:text-lg top-[6em] md:top-[5em] bg-white h-[2em] z-10 opacity-75'>New York Times calender of articles from 1997 to today.</div>
+              <div className={instruction + "bg-blue-200"}>New York Times calender of articles from 1997 to today.</div>
 
-      <motion.div
-        className={scrollTracker}
-        style={{ scaleX: scrollYProgress }}
-      />
       <div className={fixedOptionBox}>
         <div>
           {/* Options Box */}
@@ -120,6 +108,7 @@ export default function View({ past }: Props): ReactElement<any, any> {
           />
         </div>
       </div>
+      <div>
       {
         // Map the months to Months
         past.map((element, index) => (
@@ -128,6 +117,7 @@ export default function View({ past }: Props): ReactElement<any, any> {
           </div>
         ))
       }
+      </div>
     </div>
   );
 }
