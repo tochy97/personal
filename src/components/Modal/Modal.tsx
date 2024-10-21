@@ -46,7 +46,7 @@ export default function Modal({ enableOnClick, trigger, header, content, closeBu
   // Default fullscreen
   let w = width ? width : 'screen';
   let h = height ? height : 'screen';
-  let t = top ? top : '[75px]';
+  let t = top ? top : '[7%]';
   let l = left ? left : '0';
 
   const changeVisibility = () => {

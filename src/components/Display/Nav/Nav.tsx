@@ -6,12 +6,12 @@ import {
   navComponentContainer,
   subNavContainer,
 } from "./model/classnames";
-import { useWindowDimensions } from "../../functions";
+import { lightColorScheme, useWindowDimensions } from "../../functions";
 import ContentController from "../../apollo/controller/controller";
 
 export default function Nav() {
   const [subVisible, setSubVisible] = useState<boolean>(false);
-  const [subNavBg, setSubNavBg] = useState<string>("bg-black text-white");
+  const [subNavBg, setSubNavBg] = useState<string>("bg-black text-white ");
   const { width } = useWindowDimensions();
   const navRef = useRef<HTMLDivElement>(null);
 
@@ -33,6 +33,12 @@ export default function Nav() {
       </div>
     </>
   );
+  useEffect(() => {
+    if (lightColorScheme() === true) {
+      setSubNavBg("bg-white text-black ");
+    }
+  }, []);
+
 
   return (
     <>
