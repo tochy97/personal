@@ -1,8 +1,8 @@
 import { ReactElement, useState, useEffect } from 'react';
-
-import getPast from "./model/calculations/getPast";
 import { Past } from './model/types';
 import View from './view/View';
+// @ts-ignore
+import { getPast } from "@egeonu/calender-calculate"
 
 /**
  * Main function

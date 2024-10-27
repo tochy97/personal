@@ -1,12 +1,13 @@
 {
   "compilerOptions": {
-    "target": "ESNext",
+    "target": "ES6",
     "lib": [
       "dom",
       "dom.iterable",
       "esnext"
     ],
     "allowJs": true,
+    "checkJs": false,
     "skipLibCheck": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
@@ -22,5 +23,8 @@
   },
   "include": [
     "src"
+  ],
+  "exclude": [
+    "node_modules",
   ]
 }
