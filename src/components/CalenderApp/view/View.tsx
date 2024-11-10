@@ -1,4 +1,4 @@
-import { ReactElement, useState } from 'react'
+import { createRef, ReactElement, useState } from 'react'
 import { FaSearch } from "react-icons/fa";
 
 import { Past } from '../model/types';
@@ -23,7 +23,7 @@ type Props = {
 export default function View({ past }: Props): ReactElement<any, any> {
 
   const today: Date = new Date();
-  
+
   // Inputs for options box
   const [goYear, setGoYear] = useState<number>(1997);
   let yearOptions: Array<{ display: number, value: number }> = [];
@@ -36,17 +36,21 @@ export default function View({ past }: Props): ReactElement<any, any> {
     monthOptions.push({ display: monthsArray[i], value: i });
   }
 
+
   // Either use a direct input or find index of the month and pop then view there
   const search = (year: number, month: number, direct?: number): void => {
     if (!direct) {
       direct = past.findIndex((element) => element.year === year && element.index === month);
     }
-    past[direct].popView();
+    past[direct].ref.current?.scrollIntoView({
+      behavior: "smooth",
+      block: "center",
+    })
   };
 
   return (
     <div className={historyContainer}>
-              <div className={instruction + "bg-blue-200"}>New York Times calender of articles from 1997 to today.</div>
+      <div className={instruction + "bg-blue-200"}>New York Times calender of articles from 1997 to today.</div>
 
       <div className={fixedOptionBox}>
         <div>
@@ -109,14 +113,14 @@ export default function View({ past }: Props): ReactElement<any, any> {
         </div>
       </div>
       <div>
-      {
-        // Map the months to Months
-        past.map((element, index) => (
-          <div key={index} ref={past[index].ref}>
-            <Months thisMonth={element} year={element.year} />
-          </div>
-        ))
-      }
+        {
+          // Map the months to Months
+          past.map((element, index) => (
+            <div key={index} ref={past[index].ref}>
+              <Months thisMonth={element} year={element.year} />
+            </div>
+          ))
+        }
       </div>
     </div>
   );

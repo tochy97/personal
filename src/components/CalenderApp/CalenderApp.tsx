@@ -1,4 +1,4 @@
-import { ReactElement, useState, useEffect } from 'react';
+import { ReactElement, useState, useEffect, createRef } from 'react';
 import { Past } from './model/types';
 import View from './view/View';
 // @ts-ignore
@@ -14,6 +14,10 @@ function CalenderApp(): ReactElement<any, any> {
 
   useEffect(() => {
     getPast(1997).then((res: Past) => {
+      for (let i = 0; i < res.length; i++)
+      {
+        res[i].ref = createRef();
+      }
       setMyLife(res);
     });
   }, [])
