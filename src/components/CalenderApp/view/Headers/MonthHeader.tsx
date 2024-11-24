@@ -1,4 +1,4 @@
-import { monthHeader } from '../../model/classNames';
+import { monthHeader } from '../classNames';
 
 type Props = { 
     month: string,

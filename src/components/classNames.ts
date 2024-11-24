@@ -3,7 +3,7 @@ import { lightColorScheme } from "./functions";
 // Color Scheme
 export const borderColor = "border-gray ";
 
-const bgColor = lightColorScheme() ? "bg-white " : "bg-black ";
+export const bgColor = lightColorScheme() ? "bg-white " : "bg-black ";
 
 // Main
 export const app = "flex m-0 p-0 relative textColor ";
@@ -21,7 +21,6 @@ export const innerText:string =  "text-[19px] md:text-xl ";
 export const link:string =  "text-blue-600 ";
 export const fixedSubBox:string =  'absolute top-[90px] lg:top-[160px] flex ';
 export const textContainer:string =  "flex flex-col place-items-center ";
-export const myPic:string =  'w-32';
 export const starColor:string =  "ring-blue-500 ";
 export const star:string =  `${starColor} ring-offset-4 ring-offset-blue-100 z-30 cursor-grab active:cursor-grabbing `;
 

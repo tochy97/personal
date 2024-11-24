@@ -1,5 +1,5 @@
 import React, { ReactElement } from 'react'
-import { monthContainer, monthGrid, monthHeader } from '../../model/classNames';
+import { monthContainer, monthGrid, monthHeader } from '../classNames';
 import MonthHeader from '../Headers/MonthHeader';
 import WeekHeader from '../Headers/WeekHeader';
 import { Month } from '../../model/types';

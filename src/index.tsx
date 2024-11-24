@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import { ApolloClient, ApolloProvider, NormalizedCacheObject } from '@apollo/client';
-import { localCache } from './components/apollo/apollo';
+import { localCache } from './components/Display/controller/apollo/apollo';
 
 export const client: ApolloClient<NormalizedCacheObject> = new ApolloClient ({  
   connectToDevTools: true,

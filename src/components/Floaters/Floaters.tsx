@@ -1,6 +1,6 @@
 import React, { ReactElement } from 'react'
 
-import { CurrentNode } from './model/types';
+import { CurrentNode } from './types';
 import Leaf from './Leaf/Leaf';
 
 type Props = {}

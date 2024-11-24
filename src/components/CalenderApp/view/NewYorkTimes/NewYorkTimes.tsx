@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { getNYTArticles } from '../../controller/NewYorkTimes'
 import { streamToJSON } from '../../../functions';
 import { pageDivider, stack } from '../../../classNames';
-import { dayLink } from '../../model/classNames';
+import { dayLink } from '../classNames';
 import Loading from '../../../../pages/Loading/Loading';
 
 type Props = {

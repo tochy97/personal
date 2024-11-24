@@ -1,5 +1,5 @@
 import { ReactElement } from 'react'
-import { weekContainer, weekHeaderContainer } from '../../model/classNames';
+import { weekContainer, weekHeaderContainer } from '../classNames';
 import { daysArray } from '../../model/constants';
 
 /**

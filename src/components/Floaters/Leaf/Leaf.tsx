@@ -1,7 +1,7 @@
 import { ReactElement, useState } from 'react'
 import { motion } from "framer-motion"
 
-import { bubble } from '../model/classNames';
+import { bubble } from '../classNames';
 
 type Props = { 
     startX: number,

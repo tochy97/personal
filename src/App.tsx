@@ -1,17 +1,25 @@
-import Nav from "./components/Display/Nav/Nav"
-import Footer from './components/Display/Footer/Footer';
-import Content from './components/Display/Content/Content';
 import { app } from './components/classNames';
 import Floaters from './components/Floaters/Floaters';
+import About from './pages/About/About'
+import History from './pages/History/History'
+import Display from "./components/Display/Display";
 
 function App() {
 
+  let list = [
+    {
+      name: "",
+      content: <About />
+    },
+    {
+      name: "NYTimes",
+      content: <History />
+    }
+  ]
   return (
     <div className={app}>
-      <Nav />
-      <Content />
-      <Footer />
-      <Floaters/>
+      <Display contentList={list} title={'Home'} />      
+      <Floaters />
     </div>
   );
 }

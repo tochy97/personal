@@ -1,8 +1,6 @@
 import React, { createRef, ReactNode, RefObject, useEffect, useRef, useState } from 'react'
 
-import { closeButton, pageDivider } from '../classNames';
-import { modalContainer, modalContentContainer, modalHeaderContainer } from './model/classNames';
-import { lightColorScheme } from '../functions';
+import { modalContainer, modalContentContainer, modalHeaderContainer, closeButton, pageDivider } from './classNames';
 
 type Props = {
   enableOnClick: boolean;
@@ -19,7 +17,6 @@ type Props = {
 
 export default function Modal({ enableOnClick, trigger, header, content, closeButtonclass, modalContainerClass, width, height, top, left }: Props) {
   const [visible, setVisible] = useState<boolean>(false);
-  const [modalBg, setModalBg] = useState<string>("bg-black text-white");
   const modalRef: RefObject<HTMLDivElement> = createRef();
 
   useEffect(() => {
@@ -31,9 +28,6 @@ export default function Modal({ enableOnClick, trigger, header, content, closeBu
       }
     }
 
-    if (lightColorScheme()) {
-      setModalBg("bg-white text-black");
-    }
     document.addEventListener("mousedown", handleClickOutside);
 
     return () => {
@@ -69,7 +63,7 @@ export default function Modal({ enableOnClick, trigger, header, content, closeBu
         <div
           ref={modalRef}
           className={`
-                        ${modalContainer + modalBg}
+                        ${modalContainer}
                         ${modalContainerClass}
                         top-${t} 
                         left-${l} 

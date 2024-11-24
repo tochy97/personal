@@ -1,6 +1,6 @@
 import { InMemoryCache, makeVar } from "@apollo/client";
 
-import { Content } from "./model/type";
+import { Content } from "../../model/type";
 
 const initialContent: Content = {
   current: ""

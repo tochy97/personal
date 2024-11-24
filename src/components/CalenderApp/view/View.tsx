@@ -5,7 +5,7 @@ import { Past } from '../model/types';
 import { monthsArray } from '../model/constants';
 import Modal from '../../Modal/Modal';
 import { pictureButton, submitButton, textField } from '../../classNames';
-import { historyContainer, fixedOptionBox, instruction } from '../model/classNames';
+import { historyContainer, fixedOptionBox, instruction } from './classNames';
 import Months from './Months/Months';
 
 type Props = {

@@ -1,6 +1,6 @@
 import { ReactElement } from 'react'
 import Modal from '../../../Modal/Modal';
-import { dayContainer } from '../../model/classNames';
+import { dayContainer } from '../classNames';
 import { stack } from '../../../classNames';
 import NewYorkTimes from '../NewYorkTimes/NewYorkTimes';
 
