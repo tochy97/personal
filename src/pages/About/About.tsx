@@ -51,7 +51,7 @@ export default function About(): ReactElement<any, any> {
           This website is a simple react app deployed with Google Firebase and Github Actions for CI/CD.
         </aside>
         <aside className={innerText + 'indent-12 '}>
-          The history page is something i wrote for fun. I use todays date to calculate the week, the week is used to calculate the month, the month is used calculate year, then i use the year calculation to go all the way back to my birthday. - <a className={link} href='https://github.com/tochy97/tochyegeonu_dot_com'>Souce code. </a>
+          The history page is something i wrote for fun. I use todays date to calculate the week, the week is used to calculate the month, the month is used calculate year, then i use the year calculation to go all the way back to my birthday. - <a className={link} target="_blank" href='https://github.com/tochy97/personal'>Souce code. </a>
           Enjoy the bubbles!
         </aside>
       </article>

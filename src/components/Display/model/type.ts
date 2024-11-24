@@ -5,10 +5,6 @@ export type InternalPage = {
     content: ReactElement
 }
 
-export type Content = {
-    current: string,
-};
-
 export type ExternalPage = {
     name: string,
     content: string

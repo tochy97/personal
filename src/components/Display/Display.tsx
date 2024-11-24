@@ -1,10 +1,7 @@
-import { ApolloClient, ApolloProvider, NormalizedCacheObject } from "@apollo/client";
-
 import Nav from './view/Nav/Nav'
 import Content from './view/Content/Content'
 import Footer from './view/Footer/Footer'
-import { ExternalPage, InternalPage } from "./model/type";
-import { localCache } from "./controller/apollo/apollo";
+import { InternalPage } from "./model/type";
 
 type Props = {
     contentList: Array<InternalPage>,
