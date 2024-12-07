@@ -21,7 +21,7 @@ export default function About(): ReactElement<any, any> {
   return (
     <div className={stack + " place-items-center mb-[5em]"}>
       <h1 className={pageHeader + 'text-center'}>Grand Prairie Weather</h1>
-      <Weather longitude={-97.028336} latitude={32.679420} temperature_unit='f' wind_speed_unit='mph'/>
+      <Weather longitude={-97.028336} latitude={32.679420} temperature_unit='c' wind_speed_unit='mph'/>
       <article className={innerContainer + centerContainer + stack}>
         <h1 className={pageHeader + 'text-center'}>About</h1>
         <p className={innerText + 'indent-12 '}>
