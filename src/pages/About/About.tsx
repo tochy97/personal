@@ -1,41 +1,27 @@
-import React, { ReactElement, RefObject, useState } from "react";
-import { motion } from "framer-motion";
+import React, { ReactElement, RefObject } from "react";
+// @ts-ignore
+import Weather from '@egeonu/weather';
 
 import {
-  articleContainer,
   centerContainer,
   innerContainer,
   innerText,
   link,
   pageHeader,
   stack,
-  textButtom,
 } from "../../components/classNames";
-import { useWindowDimensions } from "../../components/functions";
-import me from "./MeCircle.jpg";
 
 export default function About(): ReactElement<any, any> {
-  const variants = {
-    open: { opacity: 1, height: "auto", x: 0 },
-    closed: { opacity: 0, height: "0", x: "-100%" },
-  };
-  const [isResumeOpen, setIsResumeOpen] = useState<boolean>(true);
-  const [isMySite, setIsMySite] = useState<boolean>(true);
-  const [isAboutMe, setIsAboutMe] = useState<boolean>(true);
-
   const meRef: RefObject<HTMLImageElement> = React.createRef()
-  const { width, height } = useWindowDimensions();
   meRef.current?.scrollIntoView({
     behavior: "smooth",
     block: "center",
   })
-  // test 2
+
   return (
     <div className={stack + " place-items-center mb-[5em]"}>
-      <div className={innerText}>
-        Practicing software developer with a B.S. in Computer Science from the
-        University of Texas at Arlington.
-      </div>
+      <h1 className={pageHeader + 'text-center'}>Grand Prairie Weather</h1>
+      <Weather longitude={-97.028336} latitude={32.679420} temperature_unit='f' wind_speed_unit='mph'/>
       <article className={innerContainer + centerContainer + stack}>
         <h1 className={pageHeader + 'text-center'}>About</h1>
         <p className={innerText + 'indent-12 '}>
