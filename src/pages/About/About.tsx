@@ -34,8 +34,7 @@ export default function About(): ReactElement<any, any> {
           I have worked extensively with Python, Java, Node.js, Go, SQL, NoSQL; Databases like Microsoft-SQL Server, MySQL, MongoDB, and PostgreSQL; Container management with Docker, Kubernetes and OpenShift.
         </p>
         <aside className={innerText + 'indent-12 '}>
-          This website is a simple react app built to showcase my node packages from my organization
-<a href="https://www.npmjs.com/org/egeonu"  target="_blank" rel="noopener noreferrer">@egeonu</a>. The website is hosted on Google Firebase and the source is built with React Typescript. I have
+          This website is a simple react app built to showcase my node packages from my organization<a  className={link} href="https://www.npmjs.com/org/egeonu"  target="_blank" rel="noopener noreferrer">&#9;@egeonu</a>. The website is hosted on Google Firebase and the source is built with React Typescript. I have
 continuous integration and deployments handled with Github Actions. - <a className={link} target="_blank" href='https://github.com/tochy97/personal'>Souce code. </a>
         </aside>
         <aside className={innerText + 'indent-12 '}>
