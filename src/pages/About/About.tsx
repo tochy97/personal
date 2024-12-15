@@ -25,7 +25,7 @@ export default function About(): ReactElement<any, any> {
       <article className={innerContainer + centerContainer + stack}>
         <h1 className={pageHeader + 'text-center'}>About</h1>
         <p className={innerText + 'indent-12 '}>
-          My name is Tochy and I am a Nigerian born American living in Texas. I am experienced building full-stack web applications, microservice based APIs, ai development and cloudbase ecosystems.
+          My name is Tochy and I am a Nigerian born American living in Texas. I am experienced building full-stack web applications, microservice based APIs, AI development and cloudbase ecosystems.
         </p>
         <p>
           In my current role as a Software Developer at Argo, I have gained hands-on experience in designing and implementing enteprise API, optimizing algorithms, and ensuring the scalability and reliability of microservices architectures.
