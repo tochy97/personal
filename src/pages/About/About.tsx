@@ -28,7 +28,7 @@ export default function About(): ReactElement<any, any> {
           My name is Tochy and I am a Nigerian born American living in Texas. I am experienced building full-stack web applications, microservice based APIs, AI development and cloudbase ecosystems.
         </p>
         <p>
-          In my current role as a Software Developer at Argo, I have gained hands-on experience in designing and implementing enteprise API, optimizing algorithms, and ensuring the scalability and reliability of microservices architectures.
+          In my current role as a Software Developer at Argo, I have gained hands-on experience in designing and implementing features within an enteprise API, optimizing algorithms, and ensuring the scalability and reliability of microservices architectures.
         </p>
         <p>
           I have worked extensively with Python, Java, Node.js, Go, SQL, NoSQL; Databases like Microsoft-SQL Server, MySQL, MongoDB, and PostgreSQL; Container management with Docker, Kubernetes and OpenShift.
