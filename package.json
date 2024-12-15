@@ -4,8 +4,8 @@
   "private": true,
   "dependencies": {
     "@apollo/client": "^3.12.0-alpha.0",
-    "@egeonu/calender-calculate": "^1.0.4",
-    "@egeonu/weather": "^1.0.9",
+    "@egeonu/calender-calculate": "^1.1.6",
+    "@egeonu/weather": "^1.1.0",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
