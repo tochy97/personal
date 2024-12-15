@@ -34,10 +34,12 @@ export default function About(): ReactElement<any, any> {
           I have worked extensively with Python, Java, Node.js, Go, SQL, NoSQL; Databases like Microsoft-SQL Server, MySQL, MongoDB, and PostgreSQL; Container management with Docker, Kubernetes and OpenShift.
         </p>
         <aside className={innerText + 'indent-12 '}>
-          This website is a simple react app deployed with Google Firebase and Github Actions for CI/CD.
+          This website is a simple react app built to showcase my node packages from my organization
+<a href="https://www.npmjs.com/org/egeonu"  target="_blank" rel="noopener noreferrer">@egeonu</a>. The website is hosted on Google Firebase and the source is built with React Typescript. I have
+continuous integration and deployments handled with Github Actions. - <a className={link} target="_blank" href='https://github.com/tochy97/personal'>Souce code. </a>
         </aside>
         <aside className={innerText + 'indent-12 '}>
-          The history page is something i wrote for fun. I use todays date to calculate the week, the week is used to calculate the month, the month is used calculate year, then i use the year calculation to go all the way back to my birthday. - <a className={link} target="_blank" href='https://github.com/tochy97/personal'>Souce code. </a>
+          The NyTimes page is something i wrote for fun. I am requesting a list of articles based on the day clicked in on the calender.
           Enjoy the bubbles!
         </aside>
       </article>
