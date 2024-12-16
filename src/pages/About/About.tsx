@@ -38,7 +38,7 @@ export default function About(): ReactElement<any, any> {
 continuous integration and deployments handled with Github Actions. - <a className={link} target="_blank" href='https://github.com/tochy97/personal'>Souce code. </a>
         </aside>
         <aside className={innerText + 'indent-12 '}>
-          The NyTimes page is something i wrote for fun using my <a className={link} href="https://www.npmjs.com/package/@egeonu/calender-calculate"  target="_blank" rel="noopener noreferrer">&#9;@egeonu/calender</a>. I am requesting a list of articles based on the day clicked in on the calender.
+          The NyTimes page is something i wrote for fun using my <a className={link} href="https://www.npmjs.com/package/@egeonu/calender-calculate"  target="_blank" rel="noopener noreferrer">&#9;@egeonu/calender</a> node package. I am requesting a list of articles based on the day clicked in on the calender.
           Enjoy the bubbles!
         </aside>
       </article>
