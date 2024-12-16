@@ -21,7 +21,6 @@ export default function Nav({ list, title }: Props) {
     changeContent(current_change);
 
     setSubVisible(false);
-    document.body.style.overflow = "scroll";
   };
 
   return (

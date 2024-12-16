@@ -46,13 +46,9 @@ export default function Modal({ enableOnClick, trigger, header, content, closeBu
   const changeVisibility = () => {
     if (enableOnClick && !visible) {
       setVisible(true);
-      if (h === "screen") {
-        document.body.style.overflow = "hidden";
-      }
     }
     else {
       setVisible(false);
-      document.body.style.overflow = "scroll";
     }
   }
 
