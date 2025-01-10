@@ -1,6 +1,5 @@
 import React, { ReactElement, RefObject } from "react";
-// @ts-ignore
-import WeatherUI from '@egeonu/weather';
+import ReactWeather from '@egeonu/weather';
 
 import {
   centerContainer,
@@ -20,8 +19,8 @@ export default function About(): ReactElement<any, any> {
 
   return (
     <div className={stack + " place-items-center mb-[5em]"}>
-      <h1 className={pageHeader + 'text-center'}>Grand Prairie, Tx Weather</h1>
-      <WeatherUI longitude={-97.028336} latitude={32.679420} temperature_unit='f' wind_speed_unit='mph'/>
+      <h1 className={pageHeader + 'text-center'}>Weather: Grand Prairie, Tx</h1>
+      <ReactWeather longitude={-97.028336} latitude={32.679420} temperature_unit='f' wind_speed_unit='mph'/>
       <article className={innerContainer + centerContainer + stack}>
         <h1 className={pageHeader + 'text-center'}>About</h1>
         <p className={innerText + 'indent-12 '}>
@@ -36,10 +35,6 @@ export default function About(): ReactElement<any, any> {
         <aside className={innerText + 'indent-12 '}>
           This website is a simple react app built to showcase my node packages from my organization<a className={link} href="https://www.npmjs.com/org/egeonu"  target="_blank" rel="noopener noreferrer">&#9;@egeonu</a>. The website is hosted on Google Firebase and I have
 continuous integration and deployments handled with Github Actions. - <a className={link} target="_blank" href='https://github.com/tochy97/personal'>Souce code. </a>
-        </aside>
-        <aside className={innerText + 'indent-12 '}>
-          The NyTimes page is something i wrote for fun using my <a className={link} href="https://www.npmjs.com/package/@egeonu/calender-calculate"  target="_blank" rel="noopener noreferrer">&#9;@egeonu/calender</a> node package. I am requesting a list of articles based on the day clicked in on the calender.
-          Enjoy the bubbles!
         </aside>
       </article>
     </div>
