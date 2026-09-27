@@ -7,8 +7,8 @@ import { HiOutlineDocumentText, HiOutlineLocationMarker, HiOutlineAcademicCap, H
 import { TbCloudComputing, TbSitemap, TbBrandDocker, TbDatabase, TbCode, TbActivityHeartbeat, TbMilitaryRank, TbBabyCarriage, TbCross } from "react-icons/tb";
 import me from '../../assets/me.png';
 
-const RESUME_VIEW = "https://drive.google.com/file/d/1S4w82XwdNZATUdfBj3Lzz5W0ZnX1a0Px/view?usp=sharing";
-const RESUME_PREVIEW = "https://drive.google.com/file/d/1S4w82XwdNZATUdfBj3Lzz5W0ZnX1a0Px/preview";
+const RESUME_VIEW = "https://drive.google.com/file/d/15KlnEtZpA4P9gc6Cc9xVRYxyiIAp_n4L/view?usp=sharing";
+const RESUME_PREVIEW = "https://drive.google.com/file/d/15KlnEtZpA4P9gc6Cc9xVRYxyiIAp_n4L/preview";
 const GITHUB = "https://github.com/tochy97";
 const LINKEDIN = "https://www.linkedin.com/in/tochukwu-egeonu-6b3600424/";
 
