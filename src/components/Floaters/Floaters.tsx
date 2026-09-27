@@ -1,13 +1,14 @@
-import React, { ReactElement } from 'react'
+import { ReactElement } from 'react'
 
 import { CurrentNode } from './types';
 import Leaf from './Leaf/Leaf';
+import { container } from './classNames';
 
 type Props = {}
 
 export default function Floaters({ }: Props): ReactElement<any, any> {
-    const viewport_w_delimeter = window.screen.width / 5;
-    const viewport_h_delimeter = window.screen.height / 6;
+    const viewport_w_delimeter = window.innerWidth / 3;
+    const viewport_h_delimeter = window.innerHeight / 5;
 
     const getX = (count: number): number => {
         const border_1 = viewport_w_delimeter * (count - 1);
@@ -21,29 +22,12 @@ export default function Floaters({ }: Props): ReactElement<any, any> {
         return Math.floor(Math.random() * (border_2 - border_1) + border_1);
     };
 
-    const createLeaf = (goingLeft: boolean, size: string, countX: number, countY: number): CurrentNode => {
-        return {
-          ref: React.createRef(),
-          x: getX(countX),
-          y: getY(countY),
-          goingLeft: goingLeft,
-          size: size,
-          recreatePoint: async function (this: CurrentNode) {
-            const oldX: number = this.ref.current?.offsetWidth ? this.ref.current?.offsetWidth : 100;
-            const oldY: number = this.ref.current?.offsetTop ? this.ref.current?.offsetTop : 100;
-
-            this.ref.current?.style.setProperty("opacity", "0");
-            this.ref.current?.style.setProperty("offsetWidth", "0");
-            this.ref.current?.style.setProperty("offsetTop", "0");
-
-            setTimeout(() => {
-              this.ref.current?.style.setProperty("opacity", oldX.toString());
-              this.ref.current?.style.setProperty("offsetWidth", oldY.toString());
-              this.ref.current?.style.setProperty("offsetTop", "1");
-            }, 5000);
-          },
-        };
-    }
+    const createLeaf = (goingLeft: boolean, size: string, countX: number, countY: number): CurrentNode => ({
+        x: getX(countX),
+        y: getY(countY),
+        goingLeft: goingLeft,
+        size: size,
+    });
 
     let count_x = 1;
     let count_y = 1;
@@ -64,10 +48,10 @@ export default function Floaters({ }: Props): ReactElement<any, any> {
     };
 
     return (
-        <div className='fixed top-[95px] bottom-[95px] left-[10px] right-[20px] w-fit h-fit z-70'>
+        <div className={container}>
             {
                 points.map((element, index) => (
-                    <div ref={element.ref} key={index} onClick={() => element.recreatePoint(index)}>
+                    <div key={index}>
                         <Leaf
                             startX={element.x}
                             startY={element.y}

@@ -6,7 +6,7 @@ export const borderColor = "border-gray ";
 export const bgColor = lightColorScheme() ? "bg-white " : "bg-black ";
 
 // Main
-export const app = "flex m-0 p-0 relative textColor ";
+export const app = "relative min-h-screen overflow-x-hidden bg-slate-950 font-sans text-slate-200 antialiased ";
 export const articleContainer:string =  "mt-3 text-xl h-full lg:w-[50vw] ";
 export const innerContainer: string = "px-6 py-6 border " + borderColor + "py-6 rounded h-full lg:w-[50vw] ";
 export const innerContainerHeader:string =  "font-medium text-2xl ";

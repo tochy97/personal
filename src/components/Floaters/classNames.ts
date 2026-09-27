@@ -1,2 +1,4 @@
-export const bubble = "ring-blue-500 ring-offset-4 ring-offset-blue-100 z-70 cursor-grab active:cursor-grabbing ";
-export const container = 'fixed top-[95px] bottom-[95px] left-[10px] right-[20px] w-fit h-fit z-70 overflow-hidden '
+export const bubble = "relative ring-sky-400/70 bg-sky-400/5 ring-offset-4 ring-offset-slate-950 z-0 cursor-pointer ";
+// The ring is a box-shadow, which takes no clicks, so a pseudo-element stretches the hit area past it.
+export const hitArea = "pointer-events-auto before:absolute before:-inset-3 before:rounded-full before:content-[''] ";
+export const container = 'fixed inset-0 z-0 overflow-hidden pointer-events-none '
